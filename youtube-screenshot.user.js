@@ -1,24 +1,11 @@
 // ==UserScript==
 // @name        Youtube Screenshot Button
 // @author      Amio
-// @version     1.0.0
-// @date        2016-07-09
+// @version     1.0.1
 // @description Adds a button that lets you take screenshot.
 // @homepageURL https://github.com/amio/youtube-screenshot-button
-// @include     http://www.youtube.com/*
-// @include     https://www.youtube.com/*
-// @exclude     http://www.youtube.com/embed/*
-// @exclude     https://www.youtube.com/embed/*
 // @match       http://www.youtube.com/*
 // @match       https://www.youtube.com/*
-// @match       http://s.ytimg.com/yts/jsbin/html5player*
-// @match       https://s.ytimg.com/yts/jsbin/html5player*
-// @match       http://manifest.googlevideo.com/*
-// @match       https://manifest.googlevideo.com/*
-// @match       http://*.googlevideo.com/videoplayback*
-// @match       https://*.googlevideo.com/videoplayback*
-// @match       http://*.youtube.com/videoplayback*
-// @match       https://*.youtube.com/videoplayback*
 // @run-at      document-end
 // @license     MIT License
 // ==/UserScript==
@@ -33,6 +20,12 @@
 
   var video = document.querySelector('.html5-main-video')
   var controls = document.querySelector('.ytp-right-controls')
+  var existingButton = document.querySelector('.ytp-screenshot')
+  
+  if (existingButton) {
+    console.info('Screenshot button already exists.')
+    return
+  }
 
   function createScreenshotFromVideo(video, config) {
     var canvas = document.createElement('canvas')
@@ -51,7 +44,7 @@
   }
 
   if (video && controls) {
-    var buttonHTML = `<button class="ytp-button" title="Screenshot">${icon}</button>`
+    var buttonHTML = `<button class="ytp-button ytp-screenshot" title="Screenshot">${icon}</button>`
     controls.insertAdjacentHTML('afterbegin', buttonHTML)
     controls.firstChild.addEventListener('click', function () {
       var image = createScreenshotFromVideo(video)
