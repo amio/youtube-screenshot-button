@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Youtube Screenshot Button
 // @author      Amio
-// @version     1.0.2
+// @version     1.0.3
 // @description Adds a button that lets you take screenshot.
 // @homepageURL https://github.com/amio/youtube-screenshot-button
 // @match       http://www.youtube.com/*
@@ -43,6 +43,15 @@
     return canvas.toDataURL(mime)
   }
 
+  function openImageInNewTab(dataURI) {
+    var html = '<html><body><img src="' + dataURI + '"/></body></html>'
+    var newTab = window.open('', 'large')
+
+    newTab.document.open();
+    newTab.document.write(html);
+    newTab.document.close();
+  }
+
   if (video && controls) {
     var styles = `<style>
                     .ytp-screenshot { vertical-align: top; text-align:center; }
@@ -52,7 +61,7 @@
     controls.insertAdjacentHTML('afterbegin', buttonHTML + styles)
     controls.firstChild.addEventListener('click', function () {
       var image = createScreenshotFromVideo(video)
-      window.open(image)
+      openImageInNewTab(image)
     })
   }
 })()
