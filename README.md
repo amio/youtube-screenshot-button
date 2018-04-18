@@ -4,7 +4,7 @@ A userscript adding screenshot button to youtube player.
 
 ### Install
 
-https://amio.github.io/youtube-screenshot-button/youtube-screenshot.user.js
+https://unpkg.com/userjs-youtube-screenshot-button/index.user.js
 
 ### Preview
 
