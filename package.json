@@ -1,14 +1,15 @@
 {
   "name": "userjs-youtube-screenshot-button",
-  "version": "1.0.0-alpha.1",
-  "main": "dist/index.user.js",
+  "version": "1.0.0-alpha.2",
+  "main": "index.user.js",
   "description": "Add a screenshot button to youtube player",
   "repository": "git@github.com:amio/userjs-youtube-screenshot-button.git",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist/*",
-    "build": "microbundle -i index.user.js -o dist/index.user.js -f cjs --sourcemap false"
+    "build": "microbundle -i index.user.js -o dist/index.js -f umd --sourcemap false --compress false",
+    "postbuild": "mv dist/index.umd.js dist/index.user.js"
   },
   "devDependencies": {
     "microbundle": "^0.4.4",

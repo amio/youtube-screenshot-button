@@ -71,9 +71,5 @@ function unload () {
   btn.parentElement.removeChild(btn)
 }
 
-if (typeof window !== 'undefined') {
-  insertScreenshotButton()
-}
-
-// export default insertScreenshotButton
-// export { unload }
+export default insertScreenshotButton
+export { unload }
