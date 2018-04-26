@@ -1,6 +1,6 @@
 {
   "name": "userjs-youtube-screenshot-button",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "main": "index.user.js",
   "description": "Add a screenshot button to youtube player",
   "repository": "git@github.com:amio/userjs-youtube-screenshot-button.git",
