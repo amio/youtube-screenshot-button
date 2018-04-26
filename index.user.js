@@ -1,16 +1,14 @@
-// ==UserScript==
-// @name        Youtube Screenshot Button
-// @author      Amio
-// @version     1.0.3
-// @description Adds a button that lets you take screenshot.
-// @homepageURL https://github.com/amio/youtube-screenshot-button
-// @match       http://www.youtube.com/*
-// @match       https://www.youtube.com/*
-// @run-at      document-end
-// @license     MIT License
-// ==/UserScript==
+export const META = {
+  name: 'Youtube Screenshot Button',
+  author: 'Amio',
+  version: '1.0.0',
+  description: 'Adds a button that lets you take screenshot.',
+  homepage: 'https://github.com/amio/youtube-screenshot-button',
+  matches: [ 'https://www.youtube.com/*' ],
+  runAt: 'document-end'
+}
 
-function insertScreenshotButton () {
+export default function () {
   var video = document.querySelector('.html5-main-video')
   var controls = document.querySelector('.ytp-right-controls')
   var existingButton = document.querySelector('.ytp-screenshot')
@@ -66,10 +64,7 @@ function openImageInNewTab (dataURI) {
   newTab.document.close()
 }
 
-function unload () {
+export function UNLOAD () {
   const btn = document.getElementById('ss-btn')
   btn.parentElement.removeChild(btn)
 }
-
-export default insertScreenshotButton
-export { unload }
