@@ -1,4 +1,4 @@
-export const META = {
+export const meta = {
   name: 'Youtube Screenshot Button',
   author: 'Amio',
   version: '1.0.0',
@@ -64,7 +64,7 @@ function openImageInNewTab (dataURI) {
   newTab.document.close()
 }
 
-export function UNLOAD () {
+export function unload () {
   const btn = document.getElementById('ss-btn')
   btn.parentElement.removeChild(btn)
 }
