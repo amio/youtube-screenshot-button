@@ -1,4 +1,3 @@
 node_modules
+*.user.js
 *.log
-dist
-*.js
