@@ -1,3 +1,16 @@
+// ==UserScript==
+// @name        Youtube Screenshot Button
+// @author      Amio
+// @version     1.0.0
+// @description Adds a button that lets you take screenshot.
+// @homepageURL https://github.com/amio/youtube-screenshot-button
+// @match       https://www.youtube.com/*
+// @run-at      document-end
+// @license     MIT License
+// ==/UserScript==
+
+'use strict' // Make babel keeping comments in the head @babel/babel#5512
+
 export const meta = {
   name: 'Youtube Screenshot Button',
   author: 'Amio',
@@ -8,7 +21,12 @@ export const meta = {
   runAt: 'document-end'
 }
 
-export default function () {
+export function uninstall () {
+  const btn = document.getElementById('ss-btn')
+  btn.parentElement.removeChild(btn)
+}
+
+export default function main () {
   var video = document.querySelector('.html5-main-video')
   var controls = document.querySelector('.ytp-right-controls')
   var existingButton = document.querySelector('.ytp-screenshot')
@@ -50,7 +68,7 @@ function createScreenshotFromVideo (video, config) {
   var mime = {
     png: 'image/png',
     jpg: 'image/jpeg'
-  }[config && config.type || 'png']
+  }[(config && config.type) || 'png']
 
   return canvas.toDataURL(mime)
 }
@@ -62,9 +80,4 @@ function openImageInNewTab (dataURI) {
   newTab.document.open()
   newTab.document.write(html)
   newTab.document.close()
-}
-
-export function unload () {
-  const btn = document.getElementById('ss-btn')
-  btn.parentElement.removeChild(btn)
 }

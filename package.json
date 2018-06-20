@@ -7,7 +7,7 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel --plugins transform-es2015-modules-commonjs index.user.js -d dist"
+    "build": "babel --plugins transform-es2015-modules-commonjs index.user.mjs -d dist"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
