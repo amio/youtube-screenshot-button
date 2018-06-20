@@ -13,7 +13,6 @@
     "@babel/cli": "^7.0.0-beta.51",
     "@babel/core": "^7.0.0-beta.51",
     "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.51",
-    "rimraf": "^2.6.2",
     "standard": "^11.0.1"
   },
   "keywords": [
