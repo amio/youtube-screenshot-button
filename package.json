@@ -1,17 +1,18 @@
 {
   "name": "userjs-youtube-screenshot-button",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "main": "dist/index.user.js",
   "description": "Add a screenshot button to youtube player",
   "repository": "git@github.com:amio/userjs-youtube-screenshot-button.git",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prebuild": "rimraf dist/*",
-    "build": "microbundle -i index.user.js -o dist/index.user.js -f cjs --sourcemap false --compress false"
+    "build": "babel --plugins transform-es2015-modules-commonjs index.user.js -d dist"
   },
   "devDependencies": {
-    "microbundle": "^0.4.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "rimraf": "^2.6.2"
   },
   "keywords": [
