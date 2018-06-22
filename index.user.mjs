@@ -3,23 +3,13 @@
 // @author      Amio
 // @version     1.0.0
 // @description Adds a button that lets you take screenshot.
-// @homepageURL https://github.com/amio/youtube-screenshot-button
+// @homepage    https://github.com/amio/youtube-screenshot-button
 // @match       https://www.youtube.com/*
 // @run-at      document-end
 // @license     MIT License
 // ==/UserScript==
 
 'use strict' // Make babel keeping comments in the head @babel/babel#5512
-
-export const meta = {
-  name: 'Youtube Screenshot Button',
-  author: 'Amio',
-  version: '1.0.0',
-  description: 'Adds a button that lets you take screenshot.',
-  homepage: 'https://github.com/amio/youtube-screenshot-button',
-  matches: [ 'https://www.youtube.com/*' ],
-  runAt: 'document-end'
-}
 
 export function uninstall () {
   const btn = document.getElementById('ss-btn')

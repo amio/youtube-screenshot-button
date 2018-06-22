@@ -7,16 +7,14 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel index.user.mjs -d ."
+    "build": "userscript index.user.mjs index.user.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.51",
-    "@babel/core": "^7.0.0-beta.51",
-    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.51",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "userscript-cli": "0.0.0"
   },
   "keywords": [
-    "userjs",
+    "userscript",
     "youtube",
     "screenshot",
     "button"
