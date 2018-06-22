@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "standard": "^11.0.1",
-    "userscript-cli": "0.0.0"
+    "userscript-cli": "^0.1.0"
   },
   "keywords": [
     "userscript",

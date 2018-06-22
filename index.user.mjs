@@ -9,8 +9,6 @@
 // @license     MIT License
 // ==/UserScript==
 
-'use strict' // Make babel keeping comments in the head @babel/babel#5512
-
 export function uninstall () {
   const btn = document.getElementById('ss-btn')
   btn.parentElement.removeChild(btn)
